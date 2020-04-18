@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="navbar">
+    <div [routerLink]="['/']" class="shop-name">El 3attar</div>
+    <div>
+        <span class="myspan" [routerLink]="['/shopping-cart']">
+            <mat-icon class="icon" [matBadge]="productsInCart" matBadgeColor="warn" matBadgeSize="small">shopping_cart
+            </mat-icon>
+            Panier
+        </span>
+    </div>
+</mat-toolbar>
+
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let product of products">
+            <div class="col-md-3">
+                <mat-card class="example-card">
+                    <img mat-card-image src="assets/images/{{product.image}}" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <p>{{product.category}}</p>
+                        <p><b> {{product.nom}} </b></p>
+                        <p> {{product.prix}} TND </p>
+                    </mat-card-content>
+                    <mat-card-actions class="action-buy">
+                        <button mat-raised-button color="primary" (click)="addToCart()">
+                            <mat-icon>add_shopping_cart </mat-icon> J'Achète
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

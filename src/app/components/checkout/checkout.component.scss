@@ -1,0 +1,15 @@
+.navbar {
+    justify-content: space-between;
+
+    .shop-name {
+        cursor: pointer;
+    }
+    .myspan {
+        padding-right: 1rem;
+        cursor: pointer;
+        .icon {
+            position: relative;
+            top: 5px;
+        }
+    }
+}

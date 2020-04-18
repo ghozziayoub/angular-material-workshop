@@ -1,0 +1,171 @@
+<!-- button -->
+<div>
+    <button mat-button>Click me!</button>
+    <button mat-raised-button>Raised</button>
+    <button mat-flat-button>Flat</button>
+    <button mat-stroked-button>Stroked</button>
+</div>
+<div>
+    <button mat-icon-button>Icon</button>
+    <button mat-fab>FAB</button>
+    <button mat-mini-fab>fab</button>
+</div>
+<!-- colors : primary , accent , warn -->
+<div>
+    <button color="primary" mat-button>Primary</button>
+    <button color="accent" disableRipple mat-raised-button>Primary</button>
+    <button color="warn" mat-raised-button>Warn</button>
+</div>
+<!-- Icons -->
+<mat-icon color="primary">account_box</mat-icon>
+<!--badge-->
+<!-- matBadgePosition : below before , below after -->
+<!-- matBadgeSize : small , medium , large -->
+<!-- matBadgeColor -->
+<div>
+    <span matBadge='4' matBadgePosition='below before'>Notifications</span>
+</div>
+
+<div>
+    <span matBadge='4' matBadgeOverlap='false' matBadgeColor='warn'>Notifications</span>
+</div>
+<div>
+    <span [matBadge]='notifications' [matBadgeHidden]='notifications === 0' matBadgeOverlap='false'
+        matBadgeColor='warn'>Notifications</span>
+</div>
+<!-- list -->
+<mat-list>
+    <mat-list-item>Item 1</mat-list-item>
+    <mat-list-item>Item 2</mat-list-item>
+    <mat-list-item>Item 3</mat-list-item>
+</mat-list>
+
+<mat-nav-list>
+    <a mat-list-item href="#"> Home </a>
+    <a mat-list-item href="#"> About </a>
+    <a mat-list-item href="#"> Services </a>
+</mat-nav-list>
+
+<mat-list>
+    <mat-list-item>
+        <mat-icon matListIcon>home</mat-icon>
+        <h3 matLine> Heading 1 </h3>
+        <p matLine>
+            Line 1
+        </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <mat-icon matListIcon>folder</mat-icon>
+        <h3 matLine> Heading 2 </h3>
+        <p matLine>
+            <span> Line 1 </span>
+            <span> Line 2 </span>
+        </p>
+    </mat-list-item>
+</mat-list>
+<!-- datatable -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!-- tabs -->
+<mat-tab-group>
+    <mat-tab label="Angular"> Angular Content </mat-tab>
+    <mat-tab label="React"> React Content </mat-tab>
+    <mat-tab label="Vue"> Vue Content </mat-tab>
+</mat-tab-group>
+<!-- input -->
+<mat-form-field hideRequiredMarker floatLabel='auto' appearance='legacy' color='accent'>
+    <mat-label>Name</mat-label>
+    <input required matInput>
+    <mat-hint align='end'>Min 5 characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field hideRequiredMarker floatLabel='auto' appearance='standard' color='warn'>
+    <mat-label>Name</mat-label>
+    <input required matInput>
+    <mat-hint align='end'>Min 5 characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field hideRequiredMarker floatLabel='auto' appearance='fill'>
+    <mat-label>Name</mat-label>
+    <input required matInput>
+    <mat-hint align='end'>Min 5 characters</mat-hint>
+</mat-form-field>
+<br>
+<mat-form-field hideRequiredMarker floatLabel='auto' appearance='outline'>
+    <mat-label>Name</mat-label>
+    <input required matInput>
+    <mat-hint align='end'>Min 5 characters</mat-hint>
+</mat-form-field>
+<!-- select -->
+<br>
+<mat-form-field>
+    <mat-label>Topic</mat-label>
+    <mat-select placeholder="Topic" [(value)]="selectedValue" multiple>
+        <mat-option>None</mat-option>
+        <mat-optgroup label='Web'>
+            <mat-option value='angular'>Angular</mat-option>
+            <mat-option value='react'>React</mat-option>
+            <mat-option value='vue'>Vue</mat-option>
+        </mat-optgroup>
+        <mat-optgroup label='Mobile'>
+            <mat-option value='ionic'>Ionic</mat-option>
+            <mat-option value='reactnative'>React Native</mat-option>
+        </mat-optgroup>
+    </mat-select>
+</mat-form-field>
+{{selectedValue}}
+
+<br>
+<!-- checkbox -->
+<mat-checkbox>Subscribe</mat-checkbox>
+<br>
+<mat-checkbox labelPosition="before">Subscribe</mat-checkbox>
+<br>
+<mat-checkbox color="primary">Subscribe</mat-checkbox>
+<br>
+<mat-checkbox color="warn">Subscribe</mat-checkbox>
+<br>
+<!-- radio -->
+<mat-radio-group>
+    <mat-radio-button color="primary" value="angular">Angular</mat-radio-button>
+    <mat-radio-button value="react">React</mat-radio-button>
+    <mat-radio-button color="warn" value="vue">Vue</mat-radio-button>
+</mat-radio-group>
+<br>
+<!-- date picker -->
+<mat-form-field>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepickerFilter]="dateFilter" [matDatepicker]="myDatepicker">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker  #myDatepicker></mat-datepicker>
+  </mat-form-field>

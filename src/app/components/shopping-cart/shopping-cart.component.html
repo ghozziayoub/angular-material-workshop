@@ -1,0 +1,48 @@
+<mat-toolbar color="primary" class="navbar">
+    <div [routerLink]="['/']" class="shop-name">El 3attar</div>
+    <div>
+        <span class="myspan" [routerLink]="['/shopping-cart']">
+            <mat-icon class="icon" [matBadge]="productsInCart" matBadgeColor="warn" matBadgeSize="small">shopping_cart
+            </mat-icon>
+            Panier
+        </span>
+    </div>
+</mat-toolbar>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="cart">
+                <ul>
+                    <li class="items">
+                        <div class="infoWrap">
+                            <div class="cartSection">
+                                <img src="assets/images/boissons/eau.jpg" class="itemImg" />
+                                <h3>Cristaline Eau Minérale - 6 Bouteilles - 1.5L</h3>
+                                <p> 3 x 3.00 DT</p>
+                            </div>
+                            <div class="prodTotal cartSection">
+                                <p>15.00 DT</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="subtotal">
+                <ul>
+                    <li class="totalRow final">
+                        <span class="label">Total</span>
+                        <span class="value">15.00 DT</span>
+                    </li>
+                    <li class="totalRow">
+                        <button color="primary" [routerLink]="['/checkout']" mat-raised-button>Checkout</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+

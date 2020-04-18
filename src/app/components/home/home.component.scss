@@ -1,0 +1,29 @@
+.navbar{
+    justify-content: space-between;
+
+    .shop-name{
+        cursor: pointer;
+    }
+    .myspan{
+        padding-right: 1rem;
+        cursor: pointer;
+        .icon {
+            position: relative;
+            top: 5px;
+          }
+    }
+}
+
+
+.example-card {
+    max-width: 80%;
+    margin-top: 20px;
+    
+    .example-header-image {
+        background-size: cover;
+    }
+    .action-buy {
+        text-align: center;
+    }
+}
+

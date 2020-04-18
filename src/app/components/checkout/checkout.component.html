@@ -1,0 +1,78 @@
+<mat-toolbar color="primary" class="navbar">
+    <div [routerLink]="['/']" class="shop-name">El 3attar</div>
+    <div>
+        <span class="myspan" [routerLink]="['/shopping-cart']">
+            <mat-icon class="icon" [matBadge]="productsInCart" matBadgeColor="warn" matBadgeSize="small">shopping_cart
+            </mat-icon>
+            Panier
+        </span>
+    </div>
+</mat-toolbar>
+
+<div class="container">
+    <div class="row">
+        <!-- completed="true" -->
+        <mat-horizontal-stepper>
+            <!-- STEP 1 -->
+            <mat-step label="Vos informations personnelles">
+
+                <mat-form-field color='accent'>
+                    <mat-label>Nom</mat-label>
+                    <input required matInput>
+                    <mat-hint align='end'>Min 5 caractères</mat-hint>
+                </mat-form-field>
+                <br>
+                <mat-form-field color='accent'>
+                    <mat-label>Prénom</mat-label>
+                    <input required matInput>
+                    <mat-hint align='end'>Min 5 caractères</mat-hint>
+                </mat-form-field>
+                <br>
+                <mat-form-field color='accent'>
+                    <mat-label>Telephone</mat-label>
+                    <input required matInput>
+                </mat-form-field>
+
+                <div>
+                    <button mat-button color="primary" matStepperNext>Suivant</button>
+                </div>
+            </mat-step>
+
+            <!-- STEP 2 -->
+            <mat-step label="Détails de l'adresse de livraison">
+                <mat-form-field color='accent'>
+                    <mat-label>Adresse</mat-label>
+                    <input required matInput>
+                    <mat-hint align='end'>Min 5 caractères</mat-hint>
+                </mat-form-field>
+                <br>
+                <mat-form-field color='accent'>
+                    <mat-label>Ville</mat-label>
+                    <input required matInput>
+                    <mat-hint align='end'>Min 5 caractères</mat-hint>
+                </mat-form-field>
+                <br>
+                <mat-form-field color='accent'>
+                    <mat-label>Code Postal</mat-label>
+                    <input required matInput>
+                </mat-form-field>
+                <div>
+                    <button mat-button color="accent" matStepperPrevious>Précedent</button>
+                    <button mat-button color="primary" matStepperNext>Suivant</button>
+                </div>
+            </mat-step>
+
+            <!-- STEP 3 -->
+            <mat-step label="Passer la commande">
+                <p>Total : 15 DT</p>
+                <mat-checkbox color="accent">Je confirme ma commande</mat-checkbox>
+
+                <div>
+                    <button mat-button color="accent" matStepperPrevious>Précedent</button>
+                    <button mat-button color="primary">Commander</button>
+                </div>
+            </mat-step>
+
+        </mat-horizontal-stepper>
+    </div>
+</div>
